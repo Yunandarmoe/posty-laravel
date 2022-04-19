@@ -453,6 +453,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mr-1 {
+  margin-right: 0.25rem;
+}
 .inline {
   display: inline;
 }
@@ -563,16 +566,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
-
-.pagination svg {
-  width: 20px;
-}
-
-.pagination .leading-5 {
-  text-align: right;
-}
-
-.pagination .inline-flex {
-  display: flex;
-  align-items: center;
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
