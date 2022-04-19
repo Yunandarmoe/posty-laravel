@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex justify-center mt-4">
-  <div class="w-6/12 bg-white p-6 rounded-lg">
-
+<div class="flex justify-center">
+  <div class="w-8/12 bg-white p-6 rounded-lg mt-4">
     @auth
       <form action="{{ route('posts') }}" method="post" class="mb-4">
         @csrf
@@ -23,7 +22,16 @@
         </div>
       </form>
     @endauth
-    
+
+    @if ($posts->count())
+    @foreach ($posts as $post)
+    <x-post :post="$post" />
+    @endforeach
+
+    {{ $posts->links() }}
+    @else
+    <p>There are no posts</p>
+    @endif
   </div>
 </div>
 @endsection
