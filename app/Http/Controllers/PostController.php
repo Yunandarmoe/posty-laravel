@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         $posts = Post::with(['user', 'likes'])->paginate(20);
 
-        return view ('posts.index', [
+        return view('posts.index', [
             'posts' => $posts
         ]);
     }
@@ -26,4 +26,16 @@ class PostController extends Controller
         $request->user()->posts()->create($request->only('body'));
         return back();
     }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return back();
+    }
+    //public function destroy(Post $post)
+    //{
+    //    $post->delete();
+    //    return redirect()->route('$post.index')
+    //        ->with('success', 'Post was deleted successfully');
+    //}
 }
