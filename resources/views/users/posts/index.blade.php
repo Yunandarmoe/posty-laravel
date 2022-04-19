@@ -17,7 +17,7 @@
         {{ $posts->links() }}
       </div>
       @else
-      <p>{{ $user->name }} does not have any posts</p>
+        <p>{{ $user->name }} does not have any posts</p>
       @endif
     </div>
   </div>
